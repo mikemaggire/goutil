@@ -1,3 +1,3 @@
-module github.com/mikemaggire/util
+module github.com/mikemaggire/goutil
 
 go 1.17

@@ -50,17 +50,17 @@ func TestTab(t * testing.T) {
 		t.Errorf("Tab truncate left failed")			
 	}
 
-	test = TabDec(0, 1, 0)
+	test = TabDec(0, 1, 0, true)
 	if test != "\x1b[0;32m0\x1b[0m" {
 		t.Errorf("TabDec 0 failed")			
 	}
 
-	test = TabDec(0, 5, 2)
+	test = TabDec(0, 5, 2, true)
 	if test != "\x1b[0;32m 0.00\x1b[0m" {
 		t.Errorf("TabDec 0.00 failed")			
 	}
 
-	test = TabDec(1234.45676, 12, 4)
+	test = TabDec(1234.45676, 12, 4, true)
 	if test != "\x1b[0;32m 1 234.456 8\x1b[0m" {
 		t.Errorf("TabDec 1234.45678 failed")			
 	}

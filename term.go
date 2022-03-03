@@ -56,7 +56,7 @@ func Tab(s string, length int, fRight bool) string {
 
 // format a float to a fixed length string with separator for thouthands and thousandths, aligning the decimal at pos
 // add trucation character in case of overflow
-func TabDec(f float64, length int, pos int) string {
+func TabDec(f float64, length int, pos int, fColor bool) string {
 	if pos < 0 || length < 1 || length < pos || (pos > 0 && length <= pos) {
 		panic("TabDec: illegal Parameters")
 	}
@@ -96,5 +96,6 @@ func TabDec(f float64, length int, pos int) string {
 		o = stroverflow + o[len(o)-length+1:]
 		log.Println("TabDec: overflow")
 	}
-	return Green(o)
+	if fColor { return Green(o) }
+	return o
 }
